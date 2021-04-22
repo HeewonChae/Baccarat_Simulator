@@ -1,0 +1,343 @@
+﻿<Window xmlns:syncfusion="http://schemas.syncfusion.com/wpf"  x:Class="BaccaratSimulator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BaccaratSimulator"
+        mc:Ignorable="d"
+        Title="Baccarat Simulator" Height="900" Width="1800">
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="310" />
+                <RowDefinition Height="310" />
+                <RowDefinition Height="310" />
+                <RowDefinition Height="310" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="1.6*" />
+                <ColumnDefinition Width="1.6*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <GroupBox
+                Grid.Row="0"
+                Grid.Column="1"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Height="250"
+                Width="500"
+                Header="Player"
+                FontSize="25"
+                BorderBrush="Blue">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Label
+                        Grid.RowSpan="2"
+                        Grid.Column="3"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center"
+                        x:Name="_lbl_player_result_number"
+                        FontSize="60">
+                    </Label>
+
+                    <Label
+                        Grid.Row="0"
+                        Grid.Column="2"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center"
+                        x:Name="_lbl_player_shape1"
+                        FontSize="75">
+                    </Label>
+                    <Label
+                        Grid.Row="1"
+                        Grid.Column="2"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center"
+                        x:Name="_lbl_player_number1"
+                        FontSize="75">
+                    </Label>
+
+                    <Label
+                        Grid.Row="0"
+                        Grid.Column="1"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center"
+                        x:Name="_lbl_player_shape2"
+                        FontSize="75">
+                    </Label>
+                    <Label
+                        Grid.Row="1"
+                        Grid.Column="1"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center"
+                        x:Name="_lbl_player_number2"
+                        FontSize="75">
+                    </Label>
+
+                    <Label
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center"
+                        x:Name="_lbl_player_shape3"
+                        FontSize="75">
+                    </Label>
+                    <Label
+                        Grid.Row="1"
+                        Grid.Column="0"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center"
+                        x:Name="_lbl_player_number3"
+                        FontSize="75">
+                    </Label>
+                </Grid>
+            </GroupBox>
+
+            <GroupBox
+                Grid.Row="0"
+                Grid.Column="2"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Height="250"
+                Width="500"
+                Header="Banker"
+                FontSize="25"
+                BorderBrush="Red">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Label
+                        Grid.RowSpan="2"
+                        Grid.Column="0"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center"
+                        x:Name="_lbl_banker_result_number"
+                        FontSize="60">
+                    </Label>
+
+                    <Label
+                        Grid.Row="0"
+                        Grid.Column="1"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center"
+                        x:Name="_lbl_banker_shape1"
+                        FontSize="75">
+                    </Label>
+                    <Label
+                        Grid.Row="1"
+                        Grid.Column="1"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center"
+                        x:Name="_lbl_banker_number1"
+                        FontSize="75">
+                    </Label>
+
+                    <Label
+                        Grid.Row="0"
+                        Grid.Column="2"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center"
+                        x:Name="_lbl_banker_shape2"
+                        FontSize="75">
+                    </Label>
+                    <Label
+                        Grid.Row="1"
+                        Grid.Column="2"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center"
+                        x:Name="_lbl_banker_number2"
+                        FontSize="75">
+                    </Label>
+
+                    <Label
+                        Grid.Row="0"
+                        Grid.Column="3"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center"
+                        x:Name="_lbl_banker_shape3"
+                        FontSize="75">
+                    </Label>
+                    <Label
+                        Grid.Row="1"
+                        Grid.Column="3"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center"
+                        x:Name="_lbl_banker_number3"
+                        FontSize="75">
+                    </Label>
+                </Grid>
+            </GroupBox>
+
+            <GroupBox
+                Grid.Row="0"
+                Grid.Column="3"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Height="250"
+                Width="250"
+                Header="Controller"
+                FontSize="25"
+                BorderBrush="Black">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Button
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        x:Name="_btn_initialize"
+                        Content="Initialize"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Click="Initialize_Click">
+                    </Button>
+                    <Button
+                        Grid.Row="1"
+                        Grid.Column="0"
+                        x:Name="_btn_play"
+                        Content="Play"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Click="Play_Click">
+                    </Button>
+                </Grid>
+            </GroupBox>
+
+            <GroupBox
+                Grid.Row="1"
+                Grid.ColumnSpan="4"
+                Margin="10"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Stretch"
+                Header="Big Road (원매)"
+                FontSize="25"
+                BorderBrush="Black">
+                <ScrollViewer
+                    Grid.Row="1"
+                    Grid.ColumnSpan="4"
+                    VerticalScrollBarVisibility="Auto"
+                    HorizontalScrollBarVisibility="Auto">
+                    <syncfusion:GridControl
+                        x:Name="_grd_Big_Road"
+                        syncfusion:GridTooltipService.ShowTooltips="True">
+                    </syncfusion:GridControl>
+                </ScrollViewer>
+            </GroupBox>
+
+            <GroupBox
+                Grid.Row="2"
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
+                Margin="10"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Stretch"
+                Header="Bead Plate (육매)"
+                FontSize="25"
+                BorderBrush="Black">
+                <ScrollViewer
+                    Grid.Row="1"
+                    Grid.ColumnSpan="4"
+                    VerticalScrollBarVisibility="Auto"
+                    HorizontalScrollBarVisibility="Auto">
+                    <syncfusion:GridControl
+                        x:Name="_grd_bead_plate"
+                        syncfusion:GridTooltipService.ShowTooltips="True">
+                    </syncfusion:GridControl>
+                </ScrollViewer>
+            </GroupBox>
+
+            <GroupBox
+                Grid.Row="2"
+                Grid.Column="2"
+                Grid.ColumnSpan="2"
+                Margin="10"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Stretch"
+                Header="Big Eye Boy (중국점 1군)"
+                FontSize="25"
+                BorderBrush="Black">
+                <ScrollViewer
+                    Grid.Row="1"
+                    Grid.ColumnSpan="4"
+                    VerticalScrollBarVisibility="Auto"
+                    HorizontalScrollBarVisibility="Auto">
+                    <syncfusion:GridControl
+                        x:Name="_grd_big_eye_boy"
+                        syncfusion:GridTooltipService.ShowTooltips="True">
+                    </syncfusion:GridControl>
+                </ScrollViewer>
+            </GroupBox>
+
+            <GroupBox
+                Grid.Row="3"
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
+                Margin="10"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Stretch"
+                Header="Small Road (중국점 2군)"
+                FontSize="25"
+                BorderBrush="Black">
+                <ScrollViewer
+                    Grid.Row="1"
+                    Grid.ColumnSpan="4"
+                    VerticalScrollBarVisibility="Auto"
+                    HorizontalScrollBarVisibility="Auto">
+                    <syncfusion:GridControl
+                        x:Name="_grd_small_road"
+                        syncfusion:GridTooltipService.ShowTooltips="True">
+                    </syncfusion:GridControl>
+                </ScrollViewer>
+            </GroupBox>
+
+            <GroupBox
+                Grid.Row="3"
+                Grid.Column="2"
+                Grid.ColumnSpan="2"
+                Margin="10"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Stretch"
+                Header="Cockroach Pig (중국점 3군)"
+                FontSize="25"
+                BorderBrush="Black">
+                <ScrollViewer
+                    Grid.Row="1"
+                    Grid.ColumnSpan="4"
+                    VerticalScrollBarVisibility="Auto"
+                    HorizontalScrollBarVisibility="Auto">
+                    <syncfusion:GridControl
+                        x:Name="_grd_cockroach_pig"
+                        syncfusion:GridTooltipService.ShowTooltips="True">
+                    </syncfusion:GridControl>
+                </ScrollViewer>
+            </GroupBox>
+        </Grid>
+    </ScrollViewer>
+</Window>
